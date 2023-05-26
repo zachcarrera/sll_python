@@ -1,11 +1,12 @@
 """This is an implementation of a Singly Linked List"""
 
+
 class SLNode:
     """Singly Linked List Node"""
 
     def __init__(self, val):
         self.value = val
-        self.next = None
+        self.next: SLNode | None = None
 
 
 class SList:
@@ -36,7 +37,7 @@ class SList:
         """remove the node at the front of the list"""
 
         if self.head is None:
-            return
+            return None
         temp = self.head
         self.head = self.head.next
         return temp.value
@@ -45,7 +46,7 @@ class SList:
         """remove the node at the back of the list"""
 
         if self.head is None:
-            return
+            return None
 
         if self.head.next is None:
             return self.remove_from_front()
