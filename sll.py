@@ -24,9 +24,20 @@ class SList:
 
         if self.head is None:
             return self.add_to_front(val)
-
-        runner = self.next
+        runner = self.head
+        while runner.next is not None:
+            runner = runner.next
+        runner.next = SLNode(val)
         return self
+
+    def remove_from_front(self):
+        """remove the node at the front of the list"""
+
+        if self.head is None:
+            return
+        temp = self.head
+        self.head = self.head.next
+        return temp.value
 
     def print_list(self):
         """print the singly linked list with each node on line"""
@@ -46,5 +57,10 @@ class SList:
 sll_1 = SList()
 
 sll_1.print_list()
-sll_1.add_to_front(10).add_to_front(20)
+sll_1.add_to_front(10).add_to_front(20).add_to_back(5)
+sll_1.print_list()
+
+print("-----")
+print(sll_1.remove_from_front())
+print("-----")
 sll_1.print_list()
