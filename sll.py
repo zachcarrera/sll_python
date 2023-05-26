@@ -1,3 +1,5 @@
+"""This is an implementation of a Singly Linked List"""
+
 class SLNode:
     """Singly Linked List Node"""
 
